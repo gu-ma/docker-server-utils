@@ -1,0 +1,8 @@
+jupyter/conda/envs/*
+!jupyter/conda/envs/.gitkeep
+
+jupyter/conda/pkgs/*
+!jupyter/conda/pkgs/.gitkeep
+
+jupyter/work/*
+!jupyter/work/.gitkeep

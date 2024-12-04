@@ -1,0 +1,16 @@
+version: 2
+authtoken: [YOUR_AUTH_TOKEN]
+region: eu  
+tunnels:
+  webui:
+    addr: http://localhost:7870
+    proto: http
+    # domain: yoursubdomain1-yourdomain.ngrok.dev
+  comfyui:
+    addr: http://localhost:7860
+    proto: http
+    # domain: yoursubdomain2-yourdomain.ngrok.dev
+  fooocus:
+    addr: http://localhost:7890
+    proto: http
+    # domain: yoursubdomain3-yourdomain.ngrok.dev

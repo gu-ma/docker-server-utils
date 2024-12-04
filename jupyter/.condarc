@@ -1,0 +1,14 @@
+# For more information about this file see:
+# https://conda.io/docs/user-guide/configuration/use-condarc.html
+
+channels:
+  - conda-forge
+  - defaults
+
+show_channel_urls: True
+
+envs_dirs: [/home/jovyan/.conda-envs/]
+
+pkgs_dirs: [/home/jovyan/.conda-pkgs/]
+
+create_default_packages: [nb_conda_kernels]
