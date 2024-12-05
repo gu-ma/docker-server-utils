@@ -2,13 +2,15 @@ services:
 
   jupyter:
     container_name: jupyter
+    image: jupyter:latest
     build: ./jupyter
     ports:
-      - "8888:8888"
+      - 8888:8888
     volumes:
-      - ./jupyter/work:/home/jovyan/work
-      - ./jupyter/conda/envs:/home/jovyan/.conda-envs
-      - ./jupyter/conda/pkgs:/home/jovyan/.conda-pkgs
+      - ./jupyter/work:/home/jovyan/work # jupyter work folder
+      - ./jupyter/conda/envs:/home/jovyan/.conda-envs # conda envs
+      - ./jupyter/conda/pkgs:/home/jovyan/.conda-pkgs # conda pkgs
+      - /huggingface:/home/jovyan/huggingface # hf cache
     environment:
       - NB_UID=1000 # Default
       - NVIDIA_VISIBLE_DEVICES=all
@@ -27,7 +29,7 @@ services:
   ngrok:
     container_name: ngrok
     image: ngrok/ngrok:latest
-    network_mode: "host"
+    network_mode: host
     volumes:
       - ./ngrok/ngrok.yml:/etc/ngrok.yml:ro
     command: start --config /etc/ngrok.yml --all --log=stdout
