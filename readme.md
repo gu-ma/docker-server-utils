@@ -4,7 +4,8 @@ Starts a jupyter, ngrok and portainer containers.
 
 ## Usage
 
-* Add your authenticaion token and adjust the tunnels in `ngrok/ngrok.yml` 
+* Add your authenticaion token and adjust the tunnels in `ngrok/ngrok.yml`
+* Change the hf cache directory in `docker-compose.yml` for the service `jupyter`
 * `docker compose up --build -d`
 
 ## Additional setup
@@ -12,7 +13,7 @@ Starts a jupyter, ngrok and portainer containers.
 ### Add password to Jupyter (optional)
 
 * Open a console in Jupyter notebooks using the `conda env:base`
-* Generate a password:`from jupyter_server.auth import passwd; passwd('[you_password]')` ([details]((https://jupyter-server.readthedocs.io/en/latest/operators/public-server.html#preparing-a-hashed-password)))
+* Generate a password:`from jupyter_server.auth import passwd; passwd('[you_password]')` ([details](https://jupyter-server.readthedocs.io/en/latest/operators/public-server.html#preparing-a-hashed-password))
 * Paste the password in `jupyter/jupyter_start.sh` for the argument `--PasswordIdentityProvider.hashed_password`
 * Rebuild and restart docker container: `docker compose up --build -d jupyter`
 
