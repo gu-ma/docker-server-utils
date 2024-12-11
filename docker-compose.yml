@@ -68,7 +68,9 @@ services:
     ports:
       - 8088:80
     volumes:
-      - ${FB_HOME}:/srv
+      - ${FB_DIR1}:/srv/ComfyUI
+      - ${FB_DIR2}:/srv/Fooocus
+      - ${FB_DIR3}:/srv/sd-webui
       - ./fb/filebrowser.db:/database/filebrowser.db
       - ./fb/settings.json:/config/settings.json
     environment:
