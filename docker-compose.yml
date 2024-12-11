@@ -62,5 +62,19 @@ services:
               count: 1
               capabilities: [gpu]
 
+  filebrowser:
+    image: filebrowser/filebrowser:s6
+    container_name: filebrowser
+    ports:
+      - 8088:80
+    volumes:
+      - ${FB_HOME}:/srv
+      - ./fb/filebrowser.db:/database/filebrowser.db
+      - ./fb/settings.json:/config/settings.json
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+    restart: unless-stopped
+
 volumes:
   data:
