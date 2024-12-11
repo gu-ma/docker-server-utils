@@ -5,6 +5,7 @@ Starts a jupyter, ngrok and portainer containers.
 ## Usage
 
 * Add your authentication token and adjust the tunnels in `ngrok/ngrok.yml`
+* Pull submodules `git submodule update --init --recursive` (for nvitop)
 * Change the hf cache directory in `.env` if needed
 * `docker compose up --build -d`
 

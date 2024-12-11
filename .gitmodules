@@ -1,0 +1,3 @@
+[submodule "nvitop"]
+	path = nvitop
+	url = https://github.com/XuehaiPan/nvitop.git
