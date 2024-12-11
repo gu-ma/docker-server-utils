@@ -10,14 +10,13 @@ services:
       - ./jupyter/work:/home/jovyan/work # jupyter work folder
       - ./jupyter/conda/envs:/home/jovyan/.conda-envs # conda envs
       - ./jupyter/conda/pkgs:/home/jovyan/.conda-pkgs # conda pkgs
-      - /huggingface:/home/jovyan/huggingface # hf cache
+      - ${HF_HOME}:/home/jovyan/huggingface # hf cache
     environment:
       - NB_UID=1000 # Default
       - NVIDIA_VISIBLE_DEVICES=all
       - DOCKER_STACKS_JUPYTER_CMD=lab # Default is lab
     command: ./jupyter_start.sh
     restart: unless-stopped
-    runtime: nvidia
     deploy:
       resources:
         reservations:

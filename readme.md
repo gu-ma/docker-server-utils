@@ -4,8 +4,8 @@ Starts a jupyter, ngrok and portainer containers.
 
 ## Usage
 
-* Add your authenticaion token and adjust the tunnels in `ngrok/ngrok.yml`
-* Change the hf cache directory in `docker-compose.yml` for the service `jupyter`
+* Add your authentication token and adjust the tunnels in `ngrok/ngrok.yml`
+* Change the hf cache directory in `.env` if needed
 * `docker compose up --build -d`
 
 ## Additional setup
