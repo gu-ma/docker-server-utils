@@ -7,7 +7,7 @@ RUN conda update -y -n base -c conda-forge conda
 RUN mamba update -y -n base -c conda-forge mamba
 
 # Install needed packages
-RUN conda install -y -c conda-forge nb_conda_kernels ipykernel nvitop ipywidgets
+RUN conda install -y -c conda-forge nb_conda_kernels ipykernel nvitop ipywidgets git-lfs
 
 # Startup script, not needed for now
 # COPY conda_setup.sh /usr/local/bin/start-notebook.d/
